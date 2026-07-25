@@ -22,6 +22,11 @@
             bindings = <&kp DOUBLE_QUOTES>;
             key-positions = <20 21>;
         };
+
+        leftclick {
+            bindings = <&mkp MB1>;
+            key-positions = <18 19>;
+        };
     };
 
     macros {
