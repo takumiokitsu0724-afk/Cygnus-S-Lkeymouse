@@ -20,12 +20,17 @@
 
         leftclick {
             bindings = <&mkp MB1>;
-            key-positions = <18 19>;
+            key-positions = <6 7>;
         };
 
         rightclick {
             bindings = <&mkp MB2>;
-            key-positions = <19 20>;
+            key-positions = <7 8>;
+        };
+
+        tab {
+            bindings = <&kp TAB>;
+            key-positions = <11 12>;
         };
     };
 
@@ -56,6 +61,13 @@
 
             tap-ms = <20>;
         };
+
+        new_behavior: new_behavior {
+            compatible = "zmk,behavior-tap-dance";
+            label = "NEW_BEHAVIOR";
+            #binding-cells = <0>;
+            bindings = <&kp Q>, <&kp ESC>;
+        };
     };
 
     keymap {
@@ -63,8 +75,8 @@
 
         default_layer {
             bindings = <
-&kp Q             &kp W         &kp E         &kp R       &kp T                                                   &kp Y        &kp U  &kp I      &kp O    &lt 5 P
-&kp A             &kp S         &kp D         &kp F       &kp G        &mkp RCLK                  &kp UP_ARROW    &kp H        &kp J  &kp K      &lt 4 L  &kp MINUS
+&new_behavior     &kp W         &kp E         &kp R       &kp T                                                   &kp Y        &kp U  &kp I      &lt 4 O  &lt 5 P
+&kp A             &kp S         &kp D         &kp F       &kp G        &mkp RCLK                  &kp UP_ARROW    &kp H        &kp J  &kp K      &kp L    &kp MINUS
 &mt LEFT_SHIFT Z  &kp X         &kp C         &kp V       &kp B        &mkp LCLK                  &kp DOWN_ARROW  &kp N        &kp M  &kp COMMA  &kp DOT  &kp SLASH
 &kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT  &lt 6 INT2  &lt 1 SPACE  &lt 3 INTERNATIONAL_5      &kp BACKSPACE   &lt 2 ENTER                             &kp DEL
             >;
@@ -103,10 +115,10 @@
 
         MOUSE {
             bindings = <
-&trans       &trans       &kp LC(PAGE_UP)  &kp LC(PAGE_DOWN)  &kp LC(W)                         &kp LC(W)  &kp LC(PAGE_UP)  &kp LC(PAGE_DOWN)  &trans       &trans
-&lt 5 SPACE  &lt 4 SPACE  &mkp LCLK        &mkp RCLK          &mkp MCLK  &mkp RCLK      &trans  &mkp MCLK  &mkp LCLK        &mkp RCLK          &lt 4 SPACE  &lt 5 SPACE
-&trans       &trans       &trans           &trans             &trans     &mkp LCLK      &trans  &trans     &mkp MB4         &mkp MB5           &trans       &trans
-&trans       &trans       &trans           &trans             &trans     &trans         &trans  &trans                                                      &trans
+&trans       &trans       &kp LC(PAGE_UP)  &kp LC(PAGE_DOWN)  &kp LC(W)                         &trans  &mkp LCLK  &mkp RCLK  &trans       &trans
+&lt 5 SPACE  &lt 4 SPACE  &mkp LCLK        &mkp RCLK          &mkp MCLK  &mkp RCLK      &trans  &trans  &trans     &trans     &lt 4 SPACE  &lt 5 SPACE
+&trans       &trans       &trans           &trans             &trans     &mkp LCLK      &trans  &trans  &trans     &trans     &trans       &trans
+&trans       &trans       &trans           &trans             &trans     &trans         &trans  &trans                                     &trans
             >;
         };
 
